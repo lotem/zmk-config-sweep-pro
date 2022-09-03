@@ -105,8 +105,8 @@
       bindings = <
                  &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &bt BT_PRV   &mwh MWH_D   &mmv MMV_U   &mwh MWH_U   &out OUT_TOG
                  &kp F6    &kp F7    &kp F8    &kp F9    &kp F10     &bt BT_CLR   &mmv MMV_L   &mmv MMV_D   &mmv MMV_R   &kp RALT
-                 &kp F11   &kp F12   &kp PSCRN &reset    &bootloader &bt BT_NXT   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp RSHFT
-                 &none &none &kp C_PP &sk RALT &sk RCTRL             &sk RCMD &sk RSHFT &kp C_MUTE &none &none
+                 &kp F11   &kp F12   &kp PSCRN &reset    &bootloader &bt BT_NXT   &mkp MCLK    &mkp MB4     &mkp MB5     &kp RSHFT
+                 &none &none &kp C_PP &sk RALT &sk RCTRL             &mkp LCLK &mkp RCLK &kp C_MUTE &none &none
                  >;
       sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
