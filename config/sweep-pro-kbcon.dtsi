@@ -102,9 +102,9 @@
     raise_layer {
       label = "RAIS";
       bindings = <
-                 &kp CAPS  &mwh MWH_U &mmv MMV_U &mwh MWH_D &kp ESC   &kp DEL   &kp PG_UP &kp UP    &kp PG_DN &kp INS
-                 &none     &mmv MMV_L &mmv MMV_D &mmv MMV_R &kp TAB   &kp BSPC  &kp LEFT  &kp DOWN  &kp RIGHT &kp UNDER
-                 &kp K_APP &mkp MCLK  &mkp MB4   &mkp MB5   &kp GRAVE &kp TILDE &kp ENTER &kp HOME  &kp END   &kp PIPE
+                 &kp GRAVE &mwh MWH_U &mmv MMV_U &mwh MWH_D &kp CAPS  &kp INS   &kp PG_UP &kp UP    &kp PG_DN &kp TILDE
+                 &none     &mmv MMV_L &mmv MMV_D &mmv MMV_R &kp ESC   &kp DEL   &kp LEFT  &kp DOWN  &kp RIGHT &kp UNDER
+                 &kp K_APP &mkp MCLK  &mkp MB4   &mkp MB5   &kp TAB   &kp BSPC  &kp ENTER &kp HOME  &kp END   &kp PIPE
                  &none     &none      &mkp MCLK  &mkp LCLK  &mkp RCLK &sk LCMD  &kp SPACE &none     &none     &none
                  >;
       sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp PG_UP PG_DN>;
