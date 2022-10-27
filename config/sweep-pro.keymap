@@ -10,4 +10,4 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include "sweep-pro-cradio-default.dtsi"
+#include "sweep-pro-cradio.dtsi"
