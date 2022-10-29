@@ -5,10 +5,9 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEFLT 0
-#define HOMER 1
-#define LOWER 2
-#define RAISE 3
-#define ADJST 4
+#define LOWER 1
+#define RAISE 2
+#define ADJST 3
 
 // mouse move settings
 #define MMV_U MOVE_VERT(-650)
@@ -62,7 +61,7 @@
       label = "LAYER_PREFERRED";
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
-      quick-tap-ms = <0>;
+      quick-tap-ms = <200>;
       #binding-cells = <2>;
       bindings = <&mo>, <&kp>;
     };
@@ -76,35 +75,13 @@
                  &mt LALT Q &kp W &kp E &kp R &kp T                  &kp Y &kp U &kp I &kp O &mt RALT P
                  &mt LSHFT A &kp S &kp D &kp F &kp G                 &kp H &kp J &kp K &kp L &mt RSHFT SEMI
                  &mt LCMD Z &kp X &kp C &kp V &kp B                  &kp N &kp M &kp COMMA &kp DOT &mt RCMD SLASH
-                 &none &none &kp C_PP &lp RAISE TAB &mp LCTRL RET    &kp SPACE &lp LOWER BSPC &kp C_MUTE &none &none
-                 >;
-      sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
-    };
-
-    home_layer {
-      label = "HOME";
-      bindings = <
-                 &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U &kp I &kp O &kp P
-                 &mt LSHFT A &mt LALT S &mt LCTRL D &mt LCMD F &kp G &kp H &mt RCMD J &mt RCTRL K &mt RALT L &mt RSHFT SEMI
-                 &kp Z &kp X &kp C &kp V &kp B                       &kp N &kp M &kp COMMA &kp DOT &kp SLASH
-                 &none &none &kp C_PP &lt RAISE TAB &kp RET          &kp SPACE &lt LOWER BSPC &kp C_MUTE &none &none
+                 &none &none &kp C_PP &lp LOWER TAB &mp LCTRL RET    &kp SPACE &lp RAISE BSPC &kp C_MUTE &none &none
                  >;
       sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
     };
 
     lower_layer {
       label = "LOWR";
-      bindings = <
-                 &tog HOMER &kp N1    &kp N2    &kp N3    &kp C_VOL_UP &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp DQT
-                 &none      &kp N4    &kp N5    &kp N6    &kp C_VOL_DN &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp APOS
-                 &kp CAPS   &kp N7    &kp N8    &kp N9    &kp N0       &none     &none     &none     &none     &none
-                 &none      &none     &none     &mo ADJST &gresc       &trans    &trans    &none     &none     &none
-                 >;
-      sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp PG_UP PG_DN>;
-    };
-
-    raise_layer {
-      label = "RAIS";
       bindings = <
                  &none     &kp LBKT  &kp LBRC  &kp RBRC  &none     &kp CARET &kp LPAR  &kp RPAR  &kp RBKT  &kp TILDE
                  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp AMPS  &kp MINUS &kp EQUAL &kp BSLH  &kp GRAVE
@@ -114,13 +91,24 @@
       sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp PG_UP PG_DN>;
     };
 
+    raise_layer {
+      label = "RAIS";
+      bindings = <
+                 &none      &kp N1    &kp N2    &kp N3    &kp C_VOL_UP &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp DQT
+                 &none      &kp N4    &kp N5    &kp N6    &kp C_VOL_DN &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp APOS
+                 &kp CAPS   &kp N7    &kp N8    &kp N9    &kp N0       &none     &none     &none     &none     &none
+                 &none      &none     &none     &mo ADJST &gresc       &trans    &trans    &none     &none     &none
+                 >;
+      sensor-bindings = <&inc_dec_kp TAB LS(TAB) &inc_dec_kp PG_UP PG_DN>;
+    };
+
     adjust_layer {
       label = "ADJU";
       bindings = <
-                 &bt BT_CLR   &kp F1    &kp F2    &kp F3    &kp F10   &none      &mwh MWH_U &mwh MWH_D &none      &bootloader
+                 &bt BT_CLR   &kp F1    &kp F2    &kp F3    &kp F10   &none      &mwh MWH_U &mwh MWH_D &none      &kp PSCRN
                  &bt BT_NXT   &kp F4    &kp F5    &kp F6    &kp F11   &mmv MMV_L &mmv MMV_D &mmv MMV_U &mmv MMV_R &kp INS
-                 &out OUT_TOG &kp F7    &kp F8    &kp F9    &kp F12   &none      &mkp LCLK  &mkp RCLK  &mkp MCLK  &none
-                 &none        &none     &kp C_PP  &trans    &trans    &trans     &trans     &kp C_MUTE &none      &none
+                 &out OUT_TOG &kp F7    &kp F8    &kp F9    &kp F12   &none      &mkp MCLK  &mkp MB4   &mkp MB5   &none
+                 &none        &none     &kp C_PP  &trans    &trans    &mkp LCLK  &mkp RCLK  &kp C_MUTE &none      &none
                  >;
       sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
