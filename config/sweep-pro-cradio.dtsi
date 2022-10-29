@@ -46,15 +46,37 @@
 
 / {
 
+  behaviors {
+    mp: mod_preferred {
+      compatible = "zmk,behavior-hold-tap";
+      label = "MOD_PREFERRED";
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <200>;
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+    };
+
+    lp: layer_preferred {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_PREFERRED";
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <0>;
+      #binding-cells = <2>;
+      bindings = <&mo>, <&kp>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
     default_layer {
       label = "ALPH";
       bindings = <
-                 &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U &kp I &kp O &kp P
+                 &mt LALT Q &kp W &kp E &kp R &kp T                  &kp Y &kp U &kp I &kp O &mt RALT P
                  &mt LSHFT A &kp S &kp D &kp F &kp G                 &kp H &kp J &kp K &kp L &mt RSHFT SEMI
-                 &kp Z &kp X &kp C &kp V &kp B                       &kp N &kp M &kp COMMA &kp DOT &kp SLASH
-                 &none &none &kp C_PP &lt RAISE TAB &lt HOMER RET    &kp SPACE &lt LOWER BSPC &kp C_MUTE &none &none
+                 &mt LCMD Z &kp X &kp C &kp V &kp B                  &kp N &kp M &kp COMMA &kp DOT &mt RCMD SLASH
+                 &none &none &kp C_PP &lp RAISE TAB &mp LCTRL RET    &kp SPACE &lp LOWER BSPC &kp C_MUTE &none &none
                  >;
       sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
     };
