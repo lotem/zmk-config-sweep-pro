@@ -85,7 +85,7 @@
   keymap {
     compatible = "zmk,keymap";
     default_layer {
-      label = "ALPH";
+      label = "ABC";
       bindings = <
                  &mt LCMD Q   &kp W    &kp E    &kp R    &kp T      &kp Y    &kp U    &kp I      &kp O    &cmd_p
                  &mt LSHFT A  &kp S    &kp D    &kp F    &kp G      &kp H    &kp J    &kp K      &kp L    &mt RSHFT APOS
@@ -96,7 +96,7 @@
     };
 
     lower_layer {
-      label = "LOWR";
+      label = "SYM";
       bindings = <
                  &none     &kp LBKT  &kp LBRC  &kp RBRC  &none      &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
                  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp AMPS   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
@@ -107,7 +107,7 @@
     };
 
     raise_layer {
-      label = "RAIS";
+      label = "NUM";
       bindings = <
                  &kp INS    &kp N1    &kp N2    &kp N3     &kp MINUS  &kp HOME  &kp PG_DN   &kp PG_UP     &kp END       &kp COLON
                  &kp DEL    &kp N4    &kp N5    &kp N6     &kp DOT    &kp LEFT  &kp DOWN    &kp UP        &kp RIGHT     &kp SEMI
@@ -118,7 +118,7 @@
     };
 
     adjust_layer {
-      label = "ADJU";
+      label = "FN";
       bindings = <
                  &bt BT_CLR    &kp F1    &kp F2    &kp F3    &kp F10    &none       &mwh MWH_U  &mwh MWH_D  &none       &kp PSCRN
                  &bt BT_NXT    &kp F4    &kp F5    &kp F6    &kp F11    &mmv MMV_L  &mmv MMV_D  &mmv MMV_U  &mmv MMV_R  &trans
