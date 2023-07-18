@@ -73,12 +73,12 @@
       bindings = <&mo>, <&kp>;
     };
 
-    cmd_p: mod_morph_cmd_p {
+    rctrl_p: mod_morph_rctrl_p {
       compatible = "zmk,behavior-mod-morph";
-      label = "mod_morph_cmd_p";
+      label = "mod_morph_rctrl_p";
       #binding-cells = <0>;
-      bindings = <&mt RCMD P>, <&kp P>;
-      mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+      bindings = <&mt RCTRL P>, <&kp P>;
+      mods = <MOD_LCTL>;
     };
   };
 
@@ -87,10 +87,10 @@
     default_layer {
       label = "ABC";
       bindings = <
-                 &mt LCMD Q   &kp W    &kp E    &kp R    &kp T      &kp Y    &kp U    &kp I      &kp O    &cmd_p
+                 &mt LCTRL Q  &kp W    &kp E    &kp R    &kp T      &kp Y    &kp U    &kp I      &kp O    &rctrl_p
                  &mt LSHFT A  &kp S    &kp D    &kp F    &kp G      &kp H    &kp J    &kp K      &kp L    &mt RSHFT APOS
                  &mt LALT Z   &kp X    &kp C    &kp V    &kp B      &kp N    &kp M    &kp COMMA  &kp DOT  &mt RALT SLASH
-                 &none  &none  &none  &lp LOWER TAB  &mp LCTRL RET  &kp SPACE  &lp RAISE BSPC  &none  &none  &none
+                 &none  &none  &none  &lp LOWER TAB  &mp LGUI RET   &kp SPACE  &lp RAISE BSPC  &none  &none  &none
                  >;
       sensor-bindings = <&inc_dec_kp RIGHT LEFT  &inc_dec_kp UP DOWN>;
     };
@@ -101,7 +101,7 @@
                  &none     &kp LBKT  &kp LBRC  &kp RBRC  &none      &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
                  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp AMPS   &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
                  &none     &none     &none     &none     &none      &kp ASTRK  &kp UNDER  &kp PLUS   &kp PIPE  &trans
-                 &none     &none     &none     &trans    &trans     &trans     &mo ADJST  &none      &none     &none
+                 &none     &none     &none     &trans    &trans     &mp RGUI SPC  &mo ADJST  &none   &none     &none
                  >;
       sensor-bindings = <&inc_dec_kp TAB LS(TAB)  &inc_dec_kp PG_UP PG_DN>;
     };
@@ -112,7 +112,7 @@
                  &kp INS    &kp N1    &kp N2    &kp N3     &kp MINUS  &kp HOME  &kp PG_DN   &kp PG_UP     &kp END       &kp COLON
                  &kp DEL    &kp N4    &kp N5    &kp N6     &kp DOT    &kp LEFT  &kp DOWN    &kp UP        &kp RIGHT     &kp SEMI
                  &kp CAPS   &kp N7    &kp N8    &kp N9     &kp N0     &none     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans
-                 &none      &none     &none     &mo ADJST  &gresc     &trans    &trans      &none         &none         &none
+                 &none      &none     &none     &mo ADJST  &kp ESC    &trans    &trans      &none         &none         &none
                  >;
       sensor-bindings = <&inc_dec_kp TAB LS(TAB)  &inc_dec_kp PG_UP PG_DN>;
     };
