@@ -115,10 +115,10 @@
         adjust_layer {
             label = "FN";
             bindings = <
-  &kp F1   &kp F2   &kp F3     &kp F4      &kp F5      &none       &mwh MWH_U  &mwh MWH_D  &none       &kp RGUI
-  &kp F6   &kp F7   &kp F8     &kp F9      &kp F10     &mmv MMV_L  &mmv MMV_D  &mmv MMV_U  &mmv MMV_R  &kp RCTRL
-  &kp F11  &kp F12  &kp PSCRN  &bt BT_PRV  &bt BT_NXT  &none       &mkp LCLK   &mkp RCLK   &mkp MCLK   &kp RALT
-  &none    &none    &trans     &bt BT_CLR  &kp LSHFT   &kp RSHFT   &trans      &trans      &none       &none
+  &kp LGUI   &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_PRV  &mwh MWH_U  &mwh MWH_D  &none       &kp PSCRN
+  &kp LCTRL  &kp F5  &kp F6   &kp F7   &kp F8     &mmv MMV_L  &mmv MMV_D  &mmv MMV_U  &mmv MMV_R  &kp RCTRL
+  &kp LGUI   &kp F9  &kp F10  &kp F11  &kp F12    &bt BT_NXT  &mkp LCLK   &mkp RCLK   &mkp MCLK   &kp RALT
+  &none      &none   &trans   &trans   &kp LSHFT  &kp RSHFT   &bt BT_CLR  &trans      &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV  &inc_dec_kp C_VOL_DN C_VOL_UP>;
